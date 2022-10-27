@@ -9,6 +9,8 @@ now on, the application context bootstrapped when we run tests inside the test c
 defined within this configuration class. Even context component scan won't work unless it is enabled by that configuration
 class, therefore, none of those beans defined via stereotype annotations won't be available either.
 
+https://github.com/ksevindik/spring-core-examples/blob/2bd0797b8055a5ff957dfccd55caf2e4a2ef0f9f/src/test/kotlin/com/example/springcore/test/BarTest.kt#L14
+
 ### Usage of TestConfiguration
 
 The normal way to override any beans specific to the integration test class is to create an inner configuration class with
