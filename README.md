@@ -60,3 +60,11 @@ annotation within an inner configuration class.
 
 The role of @Import annotation is to import any Spring ApplicationContext configuration class or component class into the
 ApplicationContext of the test being run.
+
+## Customization of Liveness and Readiness Probes
+
+By default, liveness and readiness probes only include livenessState and readinessState components which doesn't do anything
+useful. It might be useful to add other components into those probes so that status of the application should be queried better.
+You can achieve this by adding following properties into the application.properties file.
+
+https://github.com/ksevindik/spring-core-examples/blob/f6b6b52f93d9e0a89bcb2f0e670f6604d7d80c5d/src/main/resources/application.properties#L7-L9
