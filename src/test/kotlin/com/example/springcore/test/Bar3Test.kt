@@ -17,7 +17,6 @@ class Bar3Test {
     @TestConfiguration
     @Import(BarConfig::class, Bat::class)
     class Config {
-
     }
 
     @Autowired
