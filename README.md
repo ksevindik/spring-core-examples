@@ -9,7 +9,10 @@ now on, the application context bootstrapped when we run tests inside the test c
 defined within this configuration class. Even context component scan won't work unless it is enabled by that configuration
 class, therefore, none of those beans defined via stereotype annotations won't be available either.
 
-https://github.com/ksevindik/spring-core-examples/blob/2bd0797b8055a5ff957dfccd55caf2e4a2ef0f9f/src/test/kotlin/com/example/springcore/test/BarTest.kt#L14
+https://github.com/ksevindik/spring-core-examples/blob/2bd0797b8055a5ff957dfccd55caf2e4a2ef0f9f/src/test/kotlin/com/example/springcore/test/BarTest.kt#L12-L17
+
+https://github.com/ksevindik/spring-core-examples/blob/2bd0797b8055a5ff957dfccd55caf2e4a2ef0f9f/src/test/kotlin/com/example/springcore/test/FooTest.kt#L15-L22
+
 
 ### Usage of TestConfiguration
 

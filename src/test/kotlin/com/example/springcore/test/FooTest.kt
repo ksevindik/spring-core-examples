@@ -18,7 +18,6 @@ class FooTest {
     @Configuration
     @Import(BazConfig::class)
     class Config {
-
     }
 
     @TestConfiguration
