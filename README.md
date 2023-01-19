@@ -13,14 +13,6 @@ https://github.com/ksevindik/spring-core-examples/blob/2bd0797b8055a5ff957dfccd5
 
 https://github.com/ksevindik/spring-core-examples/blob/2bd0797b8055a5ff957dfccd55caf2e4a2ef0f9f/src/test/kotlin/com/example/springcore/test/FooTest.kt#L15-L22
 
-If the configuration class with @Configuration annotation is defined within the BaseTest class, it will be discovered when
-test case within the SubTest class is run, but if there is an overriden bean definition within that configuration class
-it won't take effect. 
-
-For the bean definition override to work, you must create a config class within the SubTest, and 
-annotate both config classes either with @Configuration or @TestConfiguration. However, be aware of that if you annotate them
-with @Configuration, then the above limitation will be in act. Therefore, it is better to go with the @TestConfiguration.
-
 ### Usage of TestConfiguration
 
 The normal way to override any beans specific to the integration test class is to create an inner configuration class with
@@ -29,7 +21,6 @@ to that test class. Defining such a configuration class won't block normal appli
 configuration classes and components will be automatically discovered and loaded when the test is run.
 
 https://github.com/ksevindik/spring-core-examples/blob/2bd0797b8055a5ff957dfccd55caf2e4a2ef0f9f/src/test/kotlin/com/example/springcore/test/FooTest.kt#L23-L29
-
 
 If your test configuration class annotated with @TestConfiguration is defined as a top level class, then it won't be 
 included in the application context automatically. Instead, it must be added explicitly either via @Import on top of a
@@ -41,6 +32,23 @@ https://github.com/ksevindik/spring-core-examples/blob/2bd0797b8055a5ff957dfccd5
 
 https://github.com/ksevindik/spring-core-examples/blob/2bd0797b8055a5ff957dfccd55caf2e4a2ef0f9f/src/test/kotlin/com/example/springcore/test/Bar2Test.kt#L14-L17
 
+### Usage of Configuration & TestConfiguration in Base Test Classes
+
+If the configuration class with @Configuration annotation is defined within the BaseTest class, it will be discovered when
+test case within the SubTest class is run, but if there is an overriden bean definition within that configuration class
+it won't take effect.
+
+https://github.com/ksevindik/spring-core-examples/blob/c8aa999af9fbe83b508b25d26e421e544ef61b40/src/test/kotlin/com/example/springcore/test/BaseTest.kt#L9
+https://github.com/ksevindik/spring-core-examples/blob/c8aa999af9fbe83b508b25d26e421e544ef61b40/src/test/kotlin/com/example/springcore/test/SubTest.kt#L9
+
+For the bean definition override to work, you must create a config class within the SubTest, and
+annotate both config classes either with @Configuration or @TestConfiguration. However, be aware of that if you annotate them
+with @Configuration, then the above limitation will be in act. Therefore, it is better to go with the @TestConfiguration.
+You need to import the config class within BaseTest if both SubTest and BaseTest config classes are marked with
+@TestConfiguration.
+
+https://github.com/ksevindik/spring-core-examples/blob/c8aa999af9fbe83b508b25d26e421e544ef61b40/src/test/kotlin/com/example/springcore/test/Base2Test.kt#L9
+https://github.com/ksevindik/spring-core-examples/blob/c8aa999af9fbe83b508b25d26e421e544ef61b40/src/test/kotlin/com/example/springcore/test/Sub2Test.kt#L12
 
 ### Usage of TestComponent
 
