@@ -13,6 +13,13 @@ https://github.com/ksevindik/spring-core-examples/blob/2bd0797b8055a5ff957dfccd5
 
 https://github.com/ksevindik/spring-core-examples/blob/2bd0797b8055a5ff957dfccd55caf2e4a2ef0f9f/src/test/kotlin/com/example/springcore/test/FooTest.kt#L15-L22
 
+If the configuration class with @Configuration annotation is defined within the BaseTest class, it will be discovered when
+test case within the SubTest class is run, but if there is an overriden bean definition within that configuration class
+it won't take effect. 
+
+For the bean definition override to work, you must create a config class within the SubTest, and 
+annotate both config classes either with @Configuration or @TestConfiguration. However, be aware of that if you annotate them
+with @Configuration, then the above limitation will be in act. Therefore, it is better to go with the @TestConfiguration.
 
 ### Usage of TestConfiguration
 
