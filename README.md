@@ -38,8 +38,8 @@ If the configuration class with @Configuration annotation is defined within the 
 test case within the SubTest class is run, but if there is an overriden bean definition within that configuration class
 it won't take effect.
 
-https://github.com/ksevindik/spring-core-examples/blob/c8aa999af9fbe83b508b25d26e421e544ef61b40/src/test/kotlin/com/example/springcore/test/BaseTest.kt#L9
-https://github.com/ksevindik/spring-core-examples/blob/c8aa999af9fbe83b508b25d26e421e544ef61b40/src/test/kotlin/com/example/springcore/test/SubTest.kt#L9
+https://github.com/ksevindik/spring-core-examples/blob/c8aa999af9fbe83b508b25d26e421e544ef61b40/src/test/kotlin/com/example/springcore/test/BaseTest.kt#L9-L18
+https://github.com/ksevindik/spring-core-examples/blob/c8aa999af9fbe83b508b25d26e421e544ef61b40/src/test/kotlin/com/example/springcore/test/SubTest.kt#L9-L18
 
 For the bean definition override to work, you must create a config class within the SubTest, and
 annotate both config classes either with @Configuration or @TestConfiguration. However, be aware of that if you annotate them
@@ -47,8 +47,8 @@ with @Configuration, then the above limitation will be in act. Therefore, it is 
 You need to import the config class within BaseTest if both SubTest and BaseTest config classes are marked with
 @TestConfiguration.
 
-https://github.com/ksevindik/spring-core-examples/blob/c8aa999af9fbe83b508b25d26e421e544ef61b40/src/test/kotlin/com/example/springcore/test/Base2Test.kt#L9
-https://github.com/ksevindik/spring-core-examples/blob/c8aa999af9fbe83b508b25d26e421e544ef61b40/src/test/kotlin/com/example/springcore/test/Sub2Test.kt#L12
+https://github.com/ksevindik/spring-core-examples/blob/c8aa999af9fbe83b508b25d26e421e544ef61b40/src/test/kotlin/com/example/springcore/test/Base2Test.kt#L9-L18
+https://github.com/ksevindik/spring-core-examples/blob/c8aa999af9fbe83b508b25d26e421e544ef61b40/src/test/kotlin/com/example/springcore/test/Sub2Test.kt#L12-L18
 
 ### Usage of TestComponent
 
